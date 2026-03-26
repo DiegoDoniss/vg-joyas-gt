@@ -164,8 +164,11 @@ a {
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: var(--color-primary-dark);
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: var(--space-md) var(--space-lg);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 
   &__container {
     max-width: 1200px;
@@ -181,11 +184,17 @@ a {
     gap: var(--space-sm);
   }
 
+  &__logo-img {
+    height: 48px;
+    width: auto;
+    border-radius: 4px;
+  }
+
   &__logo-text {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--color-accent-gold);
+    color: var(--color-primary-dark);
   }
 
   &__nav {
@@ -198,12 +207,12 @@ a {
   }
 
   &__nav-link {
-    color: var(--color-white);
+    color: var(--color-text-primary);
     font-weight: 600;
     transition: color var(--transition-fast);
 
     &:hover {
-      color: var(--color-accent-gold);
+      color: var(--color-primary-light);
     }
   }
 
