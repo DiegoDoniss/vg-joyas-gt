@@ -388,87 +388,37 @@ a {
 
 .footer {
   background-color: var(--color-primary-dark);
-  color: var(--color-white);
-  padding: var(--space-3xl) var(--space-lg) var(--space-xl);
+  padding: var(--space-4xl) var(--space-lg) var(--space-xl);
 
-  &__container {
-    max-width: 1200px;
+  &__contact {
+    max-width: 700px;
     margin: 0 auto;
-  }
-
-  &__grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: var(--space-3xl);
-
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-      gap: var(--space-xl);
-    }
-  }
-
-  &__brand {
-    max-width: 300px;
-  }
-
-  &__logo-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-accent-gold);
-    display: block;
-    margin-bottom: var(--space-md);
+    text-align: center;
   }
 
   &__text {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.875rem;
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-xl);
     line-height: 1.6;
   }
 
-  &__title {
-    font-family: 'Lato', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--color-accent-gold);
-    margin-bottom: var(--space-md);
+  &__buttons {
+    display: flex;
+    gap: var(--space-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-lg);
   }
 
-  &__links {
+  &__custom {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: var(--space-sm);
-
-    a {
-      color: rgba(255, 255, 255, 0.7);
-      transition: color var(--transition-fast);
-
-      &:hover {
-        color: var(--color-accent-gold);
-      }
-    }
-  }
-
-  &__social-links {
-    display: flex;
-    gap: var(--space-md);
-
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.1);
-      color: var(--color-white);
-      transition: all var(--transition-fast);
-
-      &:hover {
-        background-color: var(--color-accent-gold);
-        color: var(--color-primary-dark);
-      }
-    }
+    margin-top: var(--space-md);
   }
 
   &__bottom {
@@ -484,3 +434,5 @@ a {
     margin: 0;
   }
 }
+
+

@@ -1,38 +1,32 @@
 ---
+import Button from './Button.astro';
 import WhatsAppIcon from './icons/WhatsAppIcon.astro';
 import InstagramIcon from './icons/InstagramIcon.astro';
+import HandIcon from './icons/HandIcon.astro';
+import socialData from '../data/social.json';
 
+const { whatsapp } = socialData;
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="footer">
-  <div class="footer__container">
-    <div class="footer__grid">
-      <div class="footer__brand">
-        <span class="footer__logo-text">VGJoyasGT</span>
-        <p class="footer__text">Joyas artesanales hechas a mano, diseñadas especialmente para ti.</p>
-      </div>
-      <div class="footer__links">
-        <h4 class="footer__title">Enlaces</h4>
-        <a href="#inicio">Inicio</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#productos">Productos</a>
-        <a href="#contacto">Contacto</a>
-      </div>
-      <div class="footer__social">
-        <h4 class="footer__title">Síguenos</h4>
-        <div class="footer__social-links">
-          <a href="https://instagram.com/vgjoyasgt" target="_blank" rel="noopener" aria-label="Instagram">
-            <InstagramIcon />
-          </a>
-          <a href="https://wa.me/50255117308" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <WhatsAppIcon />
-          </a>
-        </div>
-      </div>
+  <div class="footer__contact">
+    <p class="footer__text">
+      ¿Listo para tu joya perfecta? Contáctanos por WhatsApp o Instagram para hacer tu pedido personalizado.
+    </p>
+    <div class="footer__buttons">
+      <Button href={whatsapp} variant="primary" target="_blank" rel="noopener">
+        <WhatsAppIcon /> WhatsApp
+      </Button>
+      <Button href="https://instagram.com/vgjoyasgt" variant="secondary" target="_blank" rel="noopener">
+        <InstagramIcon /> Instagram
+      </Button>
     </div>
-    <div class="footer__bottom">
-      <p class="footer__copyright">© {currentYear} VGJoyasGT. Todos los derechos reservados.</p>
-    </div>
+    <p class="footer__custom">
+      <HandIcon /> También aceptamos diseños personalizados
+    </p>
+  </div>
+  <div class="footer__bottom">
+    <p class="footer__copyright">© {currentYear} VGJoyasGT. Todos los derechos reservados.</p>
   </div>
 </footer>
