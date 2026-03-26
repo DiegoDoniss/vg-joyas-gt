@@ -1,22 +1,28 @@
 ---
+import logoImg from "../assets/images/logo.jpg";
+
 const navItems = [
-  { label: 'Inicio', href: '#inicio' },
-  { label: 'Nosotros', href: '#nosotros' },
-  { label: 'Productos', href: '#productos' },
-  { label: 'Contacto', href: '#contacto' },
+    { label: "Inicio", href: "#inicio" },
+    { label: "Nosotros", href: "#nosotros" },
+    { label: "Productos", href: "#productos" },
+    { label: "Contacto", href: "#contacto" },
 ];
 ---
 
 <header class="header">
-  <div class="header__container">
-    <a href="/" class="header__logo">
-      <img src="/assets/images/logo.jpg" alt="VGJoyasGT" class="header__logo-img" />
-    </a>
-    <nav class="header__nav">
-      {navItems.map((item) => (
-        <a href={item.href} class="header__nav-link">{item.label}</a>
-      ))}
-    </nav>
-    <a href="#contacto" class="btn btn-primary header__cta">Contáctanos</a>
-  </div>
+    <div class="header__container">
+        <a href="/" class="header__logo">
+            <img src={logoImg.src} alt="VGJoyasGT" class="header__logo-img" />
+        </a>
+        <nav class="header__nav">
+            {
+                navItems.map((item) => (
+                    <a href={item.href} class="header__nav-link">
+                        {item.label}
+                    </a>
+                ))
+            }
+        </nav>
+        <a href="#contacto" class="btn btn-primary header__cta">Contáctanos</a>
+    </div>
 </header>
