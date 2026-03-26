@@ -1,17 +1,76 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+import ProductCard from '../components/ProductCard.astro';
+import WhatsAppIcon from '../components/icons/WhatsAppIcon.astro';
+import InstagramIcon from '../components/icons/InstagramIcon.astro';
+import GemIcon from '../components/icons/GemIcon.astro';
+import HandIcon from '../components/icons/HandIcon.astro';
+import products from '../data/products.json';
+import social from '../data/social.json';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Inicio">
+  <Section id="inicio" variant="dark" class="hero">
+    <h1 class="hero__title">VGJoyasGT</h1>
+    <p class="hero__subtitle">Joyas artesanales hechas a mano, diseñadas especialmente para ti</p>
+    <div class="hero__cta">
+      <Button href="#productos">Ver Productos</Button>
+      <Button href="#contacto" variant="secondary">Contáctanos</Button>
+    </div>
+  </Section>
+
+  <Section id="nosotros" variant="alt">
+    <h2>Sobre Nosotros</h2>
+    <div class="about__content">
+      <div class="about__text">
+        <p>
+          Victor Garcia es un artesano joyero con más de 15 años de experiencia 
+          creando piezas únicas que combinan tradición y elegancia moderna. Cada 
+          joya es elaborada a mano en su taller en Guatemala.
+        </p>
+        <p>
+          Utilizamos materiales de la más alta calidad: oro de 18k, plata 925, 
+          y piedras preciosas seleccionadas personalmente. Cada pieza cuenta una 
+          historia de dedicación y pasión por el arte de la joyería.
+        </p>
+        <p>
+          Ofrecemos diseños personalizados para convertir tus ideas en piezas 
+          exclusivas que durarán toda la vida.
+        </p>
+      </div>
+      <div class="about__image">
+        <GemIcon />
+      </div>
+    </div>
+  </Section>
+
+  <Section id="productos">
+    <h2>Nuestros Productos</h2>
+    <p style="text-align: center; margin-top: 1rem; color: var(--color-text-muted);">
+      Descubre nuestra colección de piezas artesanales
+    </p>
+    <div class="products__grid">
+      {products.map((product) => (
+        <ProductCard {...product} />
+      ))}
+    </div>
+  </Section>
+
+  <Section id="contacto" variant="dark" class="contact">
+    <h2>Contáctanos</h2>
+    <p style="margin-top: 1rem;">¿Listo para tu joya perfecta? Escríbenos y te ayudaremos a crear la pieza de tus sueños.</p>
+    <div class="contact__buttons">
+      <Button href={social.whatsapp} variant="primary">
+        <WhatsAppIcon /> WhatsApp
+      </Button>
+      <Button href={social.instagram} variant="secondary">
+        <InstagramIcon /> Instagram
+      </Button>
+    </div>
+    <div class="contact__info">
+      <HandIcon /> También aceptamos diseños personalizados
+    </div>
+  </Section>
+</Layout>

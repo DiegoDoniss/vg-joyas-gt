@@ -1,0 +1,19 @@
+---
+interface Props {
+  name: string;
+  material: string;
+  image: string;
+  gemstone?: string;
+}
+
+const { name, material, image, gemstone } = Astro.props;
+---
+
+<article class="product-card">
+  <img src={image} alt={name} class="product-card__image" loading="lazy" />
+  <div class="product-card__content">
+    <h3 class="product-card__title">{name}</h3>
+    <p class="product-card__material">{material}</p>
+    {gemstone && <span class="badge badge--gem">{gemstone}</span>}
+  </div>
+</article>

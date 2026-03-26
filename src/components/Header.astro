@@ -1,0 +1,22 @@
+---
+const navItems = [
+  { label: 'Inicio', href: '#inicio' },
+  { label: 'Nosotros', href: '#nosotros' },
+  { label: 'Productos', href: '#productos' },
+  { label: 'Contacto', href: '#contacto' },
+];
+---
+
+<header class="header">
+  <div class="header__container">
+    <a href="/" class="header__logo">
+      <span class="header__logo-text">VGJoyasGT</span>
+    </a>
+    <nav class="header__nav">
+      {navItems.map((item) => (
+        <a href={item.href} class="header__nav-link">{item.label}</a>
+      ))}
+    </nav>
+    <a href="#contacto" class="btn btn-primary header__cta">Contáctanos</a>
+  </div>
+</header>
